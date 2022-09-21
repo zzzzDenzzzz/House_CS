@@ -99,9 +99,16 @@ namespace House
 
         public void ShowHouse()
         {
-            foreach (var part in parts)
+            if (parts.Count == 0)
             {
-                Console.WriteLine(part);
+                Console.WriteLine("Стройка не началась");
+            }
+            else
+            {
+                foreach (var part in parts)
+                {
+                    Console.WriteLine(part);
+                }
             }
         }
     }

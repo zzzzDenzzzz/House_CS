@@ -39,7 +39,7 @@ namespace House
             }
             else
             {
-                Console.WriteLine("House is built!!!");
+                Console.WriteLine("Дом построен!!!");
             }
         }
     }

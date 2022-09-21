@@ -16,6 +16,8 @@ namespace House
 
             var house = new House();
 
+            team.GetTeamLeader().InfoHouse(house);
+
             team.GetWorker().AddPart(house);
             team.GetWorker().AddPart(house);
             team.GetWorker().AddPart(house);
@@ -24,7 +26,6 @@ namespace House
 
             team.GetTeamLeader().InfoHouse(house);
 
-            team.GetWorker().AddPart(house);
             team.GetWorker().AddPart(house);
 
             Console.WriteLine();
