@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MyLib;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Soap;
 
 namespace House
 {
@@ -10,6 +13,12 @@ namespace House
         public House()
         {
             parts = new List<IPart>();
+            Loger loger = new Loger(DateTime.Now, TypeMessage.InfoMessage, typeof(House).ToString());
+            SoapFormatter soapFormatter = new SoapFormatter();
+            using (Stream fStream = File.Create($"House_{Loger.PATH_LOG_FILE}"))
+            {
+                soapFormatter.Serialize(fStream, loger);
+            }
         }
 
         public void AddBasement()
